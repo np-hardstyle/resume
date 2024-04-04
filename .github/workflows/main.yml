@@ -1,0 +1,13 @@
+name: Setup TeX Live
+  uses: paolobrasolin/setup-texlive-action@v1
+  with:
+    # File path of a tlmgr profile. The default is a `scheme-infraonly` with no documentation or source files. You use it as a starting point, see https://github.com/paolobrasolin/setup-texlive-action/blob/main/texlive.profile
+    profile-path: # optional, default is ${{ github.action_path }}${{ runner.os == 'Windows' && '\' || '/'}}texlive.profile
+    # File path of a package list (plain text, one per line). The default is an empty file.
+    packages-path: # optional, default is ${{ github.action_path }}${{ runner.os == 'Windows' && '\' || '/'}}texlive.packages
+    # The unique key to use for cache storage and retrieval. The default is `texlive`.
+    cache-key: # optional, default is texlive
+    # Option to disable caching. Default is `false`.
+    cache-enabled: # optional, default is true
+    # Path where TeX Live will be installed. The default `texlive`, inside the runner's tool cache path.
+    installation-path: # optional, default is ${{ runner.tool_cache }}${{ runner.os == 'Windows' && '\' || '/'}}texlive
